@@ -10,6 +10,8 @@ impacted operations.
 
 ## Usage
 
+The config preview action needs to be after the checkout action in order for the Stellate config file to be present.
+
 > [!IMPORTANT]  
 > Write access needs to be granted for the `pull-requests` scope and also read
 > access for `contents` scope.
@@ -29,7 +31,8 @@ jobs:
       pull-requests: write
       contents: read
     steps:
-      - uses: StellateHQ/config-preview-action@v1
+      - uses: actions/checkout@v4
+      - uses: StellateHQ/config-preview-action@v1.0.0
         with:
           stellate-token: ${{ secrets.STELLATE_TOKEN }}
 ```
