@@ -14,7 +14,8 @@ impacted operations.
 > Write access needs to be granted for the `pull-requests` scope and also read
 > access for `contents` scope.
 
-> [!WARNING] This action only works for pull_request events.
+> [!WARNING]
+> This action only works for pull_request events.
 
 ```yaml
 on:
