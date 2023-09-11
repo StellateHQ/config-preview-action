@@ -1,0 +1,19 @@
+name: 'Stellate config preview'
+description:
+  'Preview the impact of new or updated caching rules on your existing
+  operations'
+author: 'Stellate'
+
+inputs:
+  repo-token:
+    description:
+      'A GitHub token for API access. Defaults to {{ github.token }}.'
+    default: '${{ github.token }}'
+    required: true
+  stellate-token:
+    description: 'A Stellate token for CLI access.'
+    required: true
+
+runs:
+  using: node16
+  main: dist/index.js

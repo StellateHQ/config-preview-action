@@ -1,0 +1,54 @@
+{
+  "name": "config-preview-action",
+  "description": "GitHub Action that runs the stellate cli config preview",
+  "version": "1.0.0",
+  "author": "Stellate",
+  "homepage": "https://github.com/StellateHQ/config-preview-action",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StellateHQ/config-preview-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StellateHQ/config-preview-action/issues"
+  },
+  "keywords": [
+    "Stellate",
+    "GraphQL"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "bundle": "npm run format:write && npm run package",
+    "format:write": "prettier --write '**/*.ts'",
+    "format:check": "prettier --check '**/*.ts'",
+    "lint": "npx eslint . -c ./.github/linters/.eslintrc.yml",
+    "package": "ncc build src/index.ts --license licenses.txt",
+    "package:watch": "npm run package -- --watch",
+    "all": "npm run format:write && npm run lint && npm run package"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "@vercel/ncc": "^0.38.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-github": "^4.10.0",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "js-yaml": "^4.1.0",
+    "make-coverage-badge": "^1.2.0",
+    "prettier": "^3.0.3",
+    "prettier-eslint": "^15.0.1",
+    "typescript": "^5.2.2"
+  }
+}
