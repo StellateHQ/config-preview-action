@@ -10948,7 +10948,7 @@ async function executeCliPreviewCommand(stellateConfigDirectory) {
     };
     const exitCode = await exec.exec('npx', 
     // The --yes flag is used to suppress the warning 'The following package was not found and will be installed'
-    ['--yes', 'stellate@2.4.0', 'config', 'preview', '--json'], options);
+    ['--yes', 'stellate@2.11.1', 'config', 'preview', '--json'], options);
     if (exitCode !== 0) {
         throw new Error(`The command exited with code: ${exitCode}. Error: ${error}`);
     }
